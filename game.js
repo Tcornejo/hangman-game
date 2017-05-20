@@ -6,14 +6,18 @@ function resetGame () {
     drawWord(gameShownAnswer);    
 }
 $(document).ready(resetGame);
-function win () { alert('You win!');  resetGame() ;}
-function lose () { alert('Oh no, you lose!'); resetGame(); }
+function win () { alert('You win!');  
+document.getElementById("logWin").innerHTML="|";
+/*I tried to find a way to avoid creating an actual running win/loss tally. I was trying to find a solution with "append" but I got stumped.*/
+resetGame() ;}
+function lose () { alert('Oh no, you lose!'); 
+document.getElementById("logLoss").innerHTML="|";
+resetGame(); }
 function doKeypress () {
     var tempChar = $('#letter-input').val().toLowerCase();
     var tempString = "";
     $('#letter-input').val("");
     
-    // Write here!
     tempString = guessLetter( tempChar, gameShownAnswer, gameAnswer );
     if ( tempString != gameShownAnswer ) {
         updateWord( tempString );

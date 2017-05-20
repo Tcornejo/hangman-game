@@ -1,3 +1,4 @@
+/*I leaned pretty heavily on a Codecademy Hangman tutorial. I couldn't quite figure out how to remove this extraneous code. Sorry for the bloat*/
 function drawHead () {
   $('.draw-area').append( $('<div/>').addClass("body-part head") );
 }
@@ -21,6 +22,7 @@ function drawLeftLeg () {
 function drawRightLeg() {
  $('.legbox').prepend( $('<div/>').addClass("body-part rightleg") );   
 }
+
 var drawSequence = [ drawHead,drawTorso,drawLeftArm,drawRightArm,drawLeftLeg,drawRightLeg ];
 function wrongLetter ( letter ) {
     $('#wrong-letters').append(
